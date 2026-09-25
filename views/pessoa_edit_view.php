@@ -1,3 +1,12 @@
+<?php
+
+require_once __DIR__ ."/../models/pessoa.php";
+
+$id = $_GET["id"];
+$pessoa = new Pessoa($id);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,14 +25,16 @@
     </section>
     <section class="d-flex justfy-content-center">
         <section class='m-3 w-50 d-flex justfy-content-center'>
-            <form action="pessoa_add_controller.php" method="post">
+            <form action="../controllers/pessoa_edit_controller.php" method="post">
+                <input type="hidden" name="id" value="<?= $pessoa->getId(); ?>">
+
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome: </label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="nome">
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="nome" value="<?= $pessoa->getNome(); ?>">
                 </div>
 
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                    <button type="submit" class="btn btn-primary">atualizar</button>
                 </div>
             </form>
         </section>

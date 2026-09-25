@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'pessoa.php';
+require_once __DIR__ .'/models/pessoa.php';
 
 $lista = Pessoa::listar();
 
@@ -23,17 +23,17 @@ $lista = Pessoa::listar();
             <tr>
                 <th>Nome</th>
                 <th colspan = '2'>
-                    <a href = "pessoa_add_view.php" class="btn btn-success"><span class="material-symbols-outlined"></span>Adicionar</a>
+                    <a href = "views/pessoa_add_view.php" class="btn btn-success"><span class="material-symbols-outlined"></span>Adicionar</a>
                 </th>
             </tr>
             <?php foreach($lista as $pessoa): ?>
             <tr>
                 <td><?= $pessoa["nome"] ?></td>
                 <td>
-                    <a href="pessoa_edit_view.php?id=<?= $pessoa['id_pessoa'] ?>" class="btn btn-warning">editar</a>
+                    <a href="views/pessoa_edit_view.php?id=<?= $pessoa['id_pessoa'] ?>" class="btn btn-warning">editar</a>
                 </td>
                 <td>
-                    <form action="pessoa_del_controller.php" method="post" onsubmit="return confirm('Você tem certeza que quer deletar?')">
+                    <form action="controllers/pessoa_del_controller.php" method="post" onsubmit="return confirm('Você tem certeza que quer deletar?')">
                         <input type="hidden" name="id" value="<?= $pessoa['id_pessoa'] ?>">
                         <button type="submit" class="btn btn-danger">Deletar</button>
 
