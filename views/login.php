@@ -24,7 +24,7 @@ if (Autenticacao::estaAutenticado()){
 
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha: </label>
-                    <input type="password" class="form-control" id="foto" name="Senha">
+                    <input type="password" class="form-control" id="senha" name="senha">
                 </div>
 
                 <div class="mb=3">

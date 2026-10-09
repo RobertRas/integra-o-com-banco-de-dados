@@ -28,5 +28,5 @@ $novoUsuario->criar();
 
 
 
-header("Location: /CRUD_YT/index.php");
+header("Location: /CRUD_YT/views/login.php");
 exit();

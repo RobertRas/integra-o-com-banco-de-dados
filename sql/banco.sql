@@ -8,5 +8,10 @@ create table pessoa(
     foto LONGBLOB
 );
 
--- seeds
-insert into pessoas (nome) values ("João"),("Maria"),("Ana"),("Lucas");
+create table usuario(
+    id_usuario int primary key auto_increment,
+    email varchar (255) not null,
+    senha varchar (255) not null,
+    id_pessoa int,
+    nivel_acesso varchar (50) default 1
+);
