@@ -1,7 +1,7 @@
 
 <?php
 //quando o arquivo só tem php não precisa fechar a tag
-require_once __DIR__ ."/../config.php";
+require_once __DIR__ ."/config.php";
 
 class Conexao {
     public static function conectar(){
