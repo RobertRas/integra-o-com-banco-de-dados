@@ -7,6 +7,10 @@ require_once __DIR__ . "/../models/pessoa.php";
 $id = $_GET["id"];
 $pessoa = new Pessoa($id);
 
+if (!Autenticacao::estaAutenticado() || $_SESSION["nivel"] <= 1) {
+    header("Locatio: /CRUD_YT/index.php");
+}
+
 ?>
 
 

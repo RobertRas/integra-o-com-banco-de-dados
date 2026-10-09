@@ -3,6 +3,9 @@
 
 
 require_once __DIR__ .'/../templates/_cabecalho.php';
+if (Autenticacao::estaAutenticado()){
+    header('Location: /CRUD_YT/index.php');
+}
 
 ?>
 
